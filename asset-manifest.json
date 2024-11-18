@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/yoobee_fest/static/css/main.7f9c3311.css",
+    "main.js": "/yoobee_fest/static/js/main.ceeea387.js",
+    "static/js/453.01a2a4e2.chunk.js": "/yoobee_fest/static/js/453.01a2a4e2.chunk.js",
+    "index.html": "/yoobee_fest/index.html",
+    "main.7f9c3311.css.map": "/yoobee_fest/static/css/main.7f9c3311.css.map",
+    "main.ceeea387.js.map": "/yoobee_fest/static/js/main.ceeea387.js.map",
+    "453.01a2a4e2.chunk.js.map": "/yoobee_fest/static/js/453.01a2a4e2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f9c3311.css",
+    "static/js/main.ceeea387.js"
+  ]
+}
