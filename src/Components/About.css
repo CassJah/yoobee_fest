@@ -1,0 +1,56 @@
+.about {
+  padding: 60px 20px;
+  text-align: center;
+  background: white;
+  color: #000000; /* Dark text for contrast */
+  font-family: "Century Gothic", Arial, sans-serif;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #002855; /* Dark navy for professionalism */
+}
+
+.about-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  max-width: 800px;
+}
+
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(90deg, #ff77ff, #77ddff); /* Neon gradient */
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #002855;
+}
+
+.timeline-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333333;
+}

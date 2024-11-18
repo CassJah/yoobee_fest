@@ -1,0 +1,24 @@
+.sponsor-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: white;
+}
+
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.sponsor-logo {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin: 0 30px;
+}
+
+.sponsor-logo:hover {
+  transform: scale(1.1); /* Slight enlargement */
+}

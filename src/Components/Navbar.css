@@ -1,0 +1,131 @@
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background when scrolled */
+}
+
+/* Logo */
+.logo {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.rotating-part {
+  animation: fade-in 4s infinite ease-in-out;
+  color: #ff77ff; /* Neon pink for dynamic text */
+  margin-right: 5px;
+}
+
+.stationary-part {
+  color: white;
+}
+
+/* Navigation Links for Desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0 80px;
+}
+
+.nav-links a {
+  color: #ffffff; /* Electric blue */
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 2px solid #77ddff;
+  border-radius: 20px;
+  background: #77ddffaf;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+  background: linear-gradient(90deg, #ff77ff, #77ddff); /* Pink-blue gradient */
+  color: white;
+  border-color: transparent;
+}
+
+/* Burger Menu for Mobile */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1100; /* Ensure it stays on top */
+}
+
+.burger-menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Open Menu (Mobile View) */
+/* Open Menu (Mobile View) */
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.664); /* Dark transparent menu */
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  z-index: 1100;
+}
+
+.nav-links.open li {
+  margin: 15px 0; /* Add vertical spacing between menu items */
+}
+
+.nav-links.open a {
+  padding: 15px 20px; /* Ensure padding around the clickable area */
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
+  display: inline-block; /* Ensure block-level behavior for padding to apply */
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links initially for small screens */
+  }
+
+  .burger-menu {
+    display: flex; /* Show burger menu */
+  }
+}
+
+/* Media Query for Desktop View */
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none; /* Hide burger menu for larger screens */
+  }
+
+  .nav-links {
+    display: flex; /* Display navigation links inline */
+  }
+}
