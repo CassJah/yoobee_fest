@@ -46,12 +46,12 @@
 }
 
 .nav-links a {
-  color: #ffffff; /* Electric blue */
+  color: #ffffff;
   text-decoration: none;
   padding: 8px 16px;
-  border: 2px solid #77ddff;
+  /* border: 2px solid #77ddff; */
   border-radius: 20px;
-  background: #77ddffaf;
+  background: #00000069;
   transition: all 0.3s ease-in-out;
 }
 
