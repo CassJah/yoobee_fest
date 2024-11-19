@@ -6,7 +6,6 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        {/* Footer Logo */}
         <div className="footer-logo">
           <a
             href="https://www.yoobee.ac.nz/"
@@ -14,16 +13,12 @@ function Footer() {
             rel="noopener noreferrer"
           >
             <img
-              src="/assets/images/Transparent_Background_yoobee.png"
+              src={`${process.env.PUBLIC_URL}/assets/images/Transparent_Background_yoobee.png`}
               alt="Yoobee Logo"
             />
           </a>
         </div>
-
-        {/* Footer Text */}
         <p className="footer-text">© 2024 YoobeeFest. All Rights Reserved.</p>
-
-        {/* Social Icons */}
         <div className="social-icons">
           <a
             href="https://facebook.com"

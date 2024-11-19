@@ -3,21 +3,37 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section id="hero" className="hero">
+    <section className="hero">
+      {/* Background Video */}
       <video
         autoPlay
         loop
         muted
         playsInline
         className="video-bg"
-        src="/assets/videos/yoobeefest.mp4"
+        src={`${process.env.PUBLIC_URL}/assets/videos/yoobeefest.mp4`}
+        aria-label="Background video for YoobeeFest"
       ></video>
+
+      {/* Hero Content */}
       <div className="hero-content">
         <h1>#NoLimits</h1>
         <p>YoobeeFest: A celebration of creativity, innovation, and talent.</p>
+
+        {/* Call-to-Action Buttons */}
         <div className="hero-buttons">
-          <button className="cta-button">Learn More</button>
-          <button className="cta-button-secondary">Join the waitlist</button>
+          <button
+            className="cta-button"
+            aria-label="Learn more about YoobeeFest"
+          >
+            Learn More
+          </button>
+          <button
+            className="cta-button-secondary"
+            aria-label="Join the YoobeeFest waitlist"
+          >
+            Join the Waitlist
+          </button>
         </div>
       </div>
     </section>

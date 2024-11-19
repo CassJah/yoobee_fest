@@ -5,67 +5,67 @@ function Sponsor() {
   const sponsors = [
     {
       name: "Sony",
-      logo: "/assets/images/Transparent_Background_sony.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_sony.png`,
       website: "https://www.sony.co.nz/",
     },
     {
       name: "Datacom",
-      logo: "/assets/images/Transparent_Background_datacom.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_datacom.png`,
       website: "https://datacom.com/",
     },
     {
       name: "Gameloft",
-      logo: "/assets/images/Transparent_Background_gameloft.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_gameloft.png`,
       website: "https://www.gameloft.com/",
     },
     {
       name: "Genesis",
-      logo: "/assets/images/Transparent_Background_genesis.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_genesis.png`,
       website: "https://www.genesisenergy.co.nz/",
     },
     {
       name: "Grinding Gears Game",
-      logo: "/assets/images/Transparent_Background_grinding gears game.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_grinding gears game.png`,
       website: "https://www.grindinggear.com/",
     },
     {
       name: "Marvel",
-      logo: "/assets/images/Transparent_Background_marvel.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_marvel.png`,
       website: "https://www.marvel.com/",
     },
     {
       name: "Rocketlab",
-      logo: "/assets/images/Transparent_Background_rocketlab.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_rocketlab.png`,
       website: "https://www.rocketlabusa.com/",
     },
     {
       name: "Spark",
-      logo: "/assets/images/Transparent_Background_spark.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_spark.png`,
       website: "https://www.spark.co.nz/",
     },
     {
       name: "Vodafone",
-      logo: "/assets/images/Transparent_Background_vodafone.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_vodafone.png`,
       website: "https://one.nz/",
     },
     {
       name: "Wacom",
-      logo: "/assets/images/Transparent_Background_wacom.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_wacom.png`,
       website: "https://www.wacom.com/",
     },
     {
       name: "Xero",
-      logo: "/assets/images/Transparent_Background_xero.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_xero.png`,
       website: "https://www.xero.com/",
     },
     {
       name: "Yoobee",
-      logo: "/assets/images/Transparent_Background_yoobee.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_yoobee.png`,
       website: "https://www.yoobee.ac.nz/",
     },
     {
       name: "Mukpuddy",
-      logo: "/assets/images/Transparent_Background_mukpuddy.png",
+      logo: `${process.env.PUBLIC_URL}/assets/images/Transparent_Background_mukpuddy.png`,
       website: "https://mukpuddy.com/",
     },
   ];

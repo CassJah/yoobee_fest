@@ -7,18 +7,18 @@ function Highlights() {
     {
       title: "Graduation Ceremony",
       description: "Celebrate the achievements of our graduates.",
-      video: "/assets/videos/graduation.mp4", // Correct video path
+      video: `${process.env.PUBLIC_URL}/assets/videos/graduation.mp4`,
     },
     {
       title: "Student Showcase",
       description:
         "Interactive displays of student projects across disciplines.",
-      video: "/assets/videos/a.i.mp4", // Correct video path
+      video: `${process.env.PUBLIC_URL}/assets/videos/a.i.mp4`,
     },
     {
       title: "Music Festival",
       description: "Enjoy a summer festival with top artists and bands.",
-      video: "/assets/videos/festival.mp4", // Correct video path
+      video: `${process.env.PUBLIC_URL}/assets/videos/festival.mp4`,
     },
   ];
 
