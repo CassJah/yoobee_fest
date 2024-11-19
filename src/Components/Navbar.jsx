@@ -21,7 +21,6 @@ function Navbar() {
     "Yoobee",
   ];
 
-  // Cycle through logo words
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentLogo((prev) => {
@@ -32,17 +31,13 @@ function Navbar() {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [logoWords]);
 
-  // Handle scroll to update navbar state
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 50);
-  };
+  const handleScroll = () => setIsScrolled(window.scrollY > 50);
 
-  // Handle window resize to reset menu state
   const handleResize = () => {
     if (window.innerWidth > 768) {
-      setMenuOpen(false); // Close the menu on desktop view
+      setMenuOpen(false);
     }
   };
 
@@ -55,6 +50,11 @@ function Navbar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const handleActiveLink = (link) => {
+    setActiveLink(link);
+    setMenuOpen(false);
+  };
 
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
@@ -71,40 +71,23 @@ function Navbar() {
         <span className="line"></span>
       </button>
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <li>
-          <a href="#hero" className={activeLink === "#hero" ? "active" : ""}>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#about" className={activeLink === "#about" ? "active" : ""}>
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            href="#highlights"
-            className={activeLink === "#highlights" ? "active" : ""}
-          >
-            Events
-          </a>
-        </li>
-        <li>
-          <a
-            href="#sponsor"
-            className={activeLink === "#sponsor" ? "active" : ""}
-          >
-            Sponsors
-          </a>
-        </li>
-        <li>
-          <a
-            href="#footer"
-            className={activeLink === "#footer" ? "active" : ""}
-          >
-            Contact
-          </a>
-        </li>
+        {[
+          { href: "#hero", label: "Home" },
+          { href: "#about", label: "About" },
+          { href: "#highlights", label: "Events" },
+          { href: "#sponsor", label: "Sponsors" },
+          { href: "#footer", label: "Contact" },
+        ].map((item) => (
+          <li key={item.href}>
+            <a
+              href={item.href}
+              className={activeLink === item.href ? "active" : ""}
+              onClick={() => handleActiveLink(item.href)}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
