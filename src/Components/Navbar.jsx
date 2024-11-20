@@ -1,25 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "./Navbar.css";
 
 function Navbar() {
   const [currentLogo, setCurrentLogo] = useState("Yoobee");
-  const [activeLink, setActiveLink] = useState("#hero");
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const logoWords = [
-    "Game",
-    "Tech",
-    "Film",
-    "Art",
-    "Code",
-    "Media",
-    "Design",
-    "Tourism",
-    "Creative",
-    "Mani",
-    "Yoobee",
-  ];
+  const logoWords = useMemo(
+    () => [
+      "Game",
+      "Tech",
+      "Film",
+      "Art",
+      "Code",
+      "Media",
+      "Design",
+      "Tourism",
+      "Creative",
+      "Mani",
+      "Yoobee",
+    ],
+    []
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,30 +33,18 @@ function Navbar() {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [logoWords]);
+  }, [logoWords]); // Add `logoWords` to the dependency array
 
-  const handleScroll = () => setIsScrolled(window.scrollY > 50);
-
-  const handleResize = () => {
-    if (window.innerWidth > 768) {
-      setMenuOpen(false);
-    }
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 50);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const handleActiveLink = (link) => {
-    setActiveLink(link);
-    setMenuOpen(false);
-  };
 
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
@@ -71,23 +61,21 @@ function Navbar() {
         <span className="line"></span>
       </button>
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        {[
-          { href: "#hero", label: "Home" },
-          { href: "#about", label: "About" },
-          { href: "#highlights", label: "Events" },
-          { href: "#sponsor", label: "Sponsors" },
-          { href: "#footer", label: "Contact" },
-        ].map((item) => (
-          <li key={item.href}>
-            <a
-              href={item.href}
-              className={activeLink === item.href ? "active" : ""}
-              onClick={() => handleActiveLink(item.href)}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
+        <li>
+          <a href="#hero">Home</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#highlights">Events</a>
+        </li>
+        <li>
+          <a href="#sponsor">Sponsors</a>
+        </li>
+        <li>
+          <a href="#footer">Contact</a>
+        </li>
       </ul>
     </nav>
   );
