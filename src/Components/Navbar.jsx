@@ -3,9 +3,11 @@ import "./Navbar.css";
 
 function Navbar() {
   const [currentLogo, setCurrentLogo] = useState("Yoobee");
+  const [activeLink, setActiveLink] = useState("#hero");
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Use useMemo for logoWords to avoid reinitializing on every render
   const logoWords = useMemo(
     () => [
       "Game",
@@ -23,6 +25,7 @@ function Navbar() {
     []
   );
 
+  // Update currentLogo periodically
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentLogo((prev) => {
@@ -33,17 +36,38 @@ function Navbar() {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [logoWords]); // Add `logoWords` to the dependency array
+  }, [logoWords]);
 
+  // Handle scroll events
   const handleScroll = () => {
-    setIsScrolled(window.scrollY > 50);
+    const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+    setIsScrolled(scrollPosition > 50);
+
+    const sections = [
+      { id: "#hero", element: document.getElementById("hero") },
+      { id: "#about", element: document.getElementById("about") },
+      { id: "#highlights", element: document.getElementById("highlights") },
+      { id: "#sponsor", element: document.getElementById("sponsor") },
+      { id: "#footer", element: document.getElementById("footer") },
+    ];
+
+    for (let i = 0; i < sections.length; i++) {
+      const section = sections[i].element;
+      if (
+        section &&
+        scrollPosition >= section.offsetTop &&
+        scrollPosition < section.offsetTop + section.offsetHeight
+      ) {
+        setActiveLink(sections[i].id);
+        return;
+      }
+    }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -62,19 +86,38 @@ function Navbar() {
       </button>
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li>
-          <a href="#hero">Home</a>
+          <a href="#hero" className={activeLink === "#hero" ? "active" : ""}>
+            Home
+          </a>
         </li>
         <li>
-          <a href="#about">About</a>
+          <a href="#about" className={activeLink === "#about" ? "active" : ""}>
+            About
+          </a>
         </li>
         <li>
-          <a href="#highlights">Events</a>
+          <a
+            href="#highlights"
+            className={activeLink === "#highlights" ? "active" : ""}
+          >
+            Events
+          </a>
         </li>
         <li>
-          <a href="#sponsor">Sponsors</a>
+          <a
+            href="#sponsor"
+            className={activeLink === "#sponsor" ? "active" : ""}
+          >
+            Sponsors
+          </a>
         </li>
         <li>
-          <a href="#footer">Contact</a>
+          <a
+            href="#footer"
+            className={activeLink === "#footer" ? "active" : ""}
+          >
+            Contact
+          </a>
         </li>
       </ul>
     </nav>
