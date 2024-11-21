@@ -10,8 +10,9 @@ function Hero() {
         loop
         muted
         playsInline
+        crossOrigin="anonymous"
         className="video-bg"
-        src={`${process.env.PUBLIC_URL}/assets/videos/yoobeefest.mp4`}
+        src="/assets/videos/yoobeefest.mp4"
         aria-label="Background video for YoobeeFest"
       ></video>
 
